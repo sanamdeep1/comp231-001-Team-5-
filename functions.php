@@ -90,10 +90,10 @@ function article_taxonomy(){
         'hierarchical' => false,
         'query_var' => true,
         'show_ui' => true,
-        'rewrite'     => array( 'slug' => 'tags' )
+        'rewrite'     => array( 'slug' => 'article-tags' )
     );
 
-    register_taxonomy('tags', array('article'), $args);
+    register_taxonomy('article-tags', array('article'), $args);
 }
 add_action('init', 'article_taxonomy');
 
