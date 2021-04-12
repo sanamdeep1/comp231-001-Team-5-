@@ -1,9 +1,7 @@
 <?php
 
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
 
+/* Setting up the layout for adding/updating pages and posts */
 function gsp_setup(){
     add_theme_support('menus');
     add_theme_support('post-thumbnails');
@@ -14,6 +12,8 @@ function gsp_setup(){
 }
 add_action('after_setup_theme', 'gsp_setup');
 
+
+/* Adding stylesheets to the wp_head hook to add to head element */
 function gsp_registerStyles(){
 
     $version = wp_get_theme()->get('Version');
@@ -26,6 +26,7 @@ function gsp_registerStyles(){
 add_action('wp_head', 'gsp_registerStyles');
 
 
+/* Adding required scripts */
 function gsp_registerScripts(){
 
     wp_enqueue_script('gsp_bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", array('gsp_jQuery'), '4.5.2', true);
@@ -36,7 +37,7 @@ function gsp_registerScripts(){
 }
 add_action('wp_enqueue_scripts', 'gsp_registerScripts');
 
-
+/* Adding nav menu support */
 function gsp_menus(){
 
     register_nav_menus(array(
@@ -46,7 +47,7 @@ function gsp_menus(){
 }
 
 
-
+/*Creating custom "article" post type */
 function article_post_type(){
 
     $args = array(
@@ -69,7 +70,7 @@ function article_post_type(){
         'hierarchical' => true,
         'menu_icon' => 'dashicons-media-spreadsheet',
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'excerpt','custom-fields')
+        'supports' => array('title', 'excerpt','custom-fields')
     );
     register_post_type('article', $args);
 }
@@ -77,7 +78,7 @@ add_action('init','article_post_type');
 
 
 
-
+/* Adding tag support for custom "article" post type */
 function article_taxonomy(){
 
     $args = array(
@@ -87,9 +88,12 @@ function article_taxonomy(){
         ),
         'public' => true,
         'hierarchical' => false,
+        'query_var' => true,
+        'show_ui' => true,
+        'rewrite'     => array( 'slug' => 'tags' )
     );
 
-    register_taxonomy('Tags', array('article'), $args);
+    register_taxonomy('tags', array('article'), $args);
 }
 add_action('init', 'article_taxonomy');
 
