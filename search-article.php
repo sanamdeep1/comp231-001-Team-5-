@@ -12,6 +12,10 @@
 
 <?php get_template_part('includes/section','ArticleArchives' ); ?>
 
-<?php endwhile; endif; ?>
+<?php endwhile; else :?> 
+
+<h4>No results found</h4>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

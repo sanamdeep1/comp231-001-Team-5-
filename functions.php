@@ -97,4 +97,18 @@ function article_taxonomy(){
 }
 add_action('init', 'article_taxonomy');
 
+
+
+function article_archive_search($template){
+    global $wp_query;
+    $post_type = get_query_var('post_type');
+    if( $wp_query->is_search && $post_type == 'article'){
+        return locate_template('search-article.php');
+    }
+    return $template;
+}
+add_filter('template_include','article_archive_search');
+
+
+
 ?>
