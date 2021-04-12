@@ -14,4 +14,9 @@
 
 <?php endwhile; endif; ?>
 
+<div class="row justify-content-center">
+    <div class="col-4">
+        <?php echo paginate_links() ?>
+    </div>
+</div>
 <?php get_footer(); ?>
