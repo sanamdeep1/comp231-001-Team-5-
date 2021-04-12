@@ -148,3 +148,19 @@ a.carousel-item-title{
 #pages-cards .card:hover .card-title{
     font-size: xx-large;
 }
+
+
+.page-numbers{
+    display: inline-block;
+    padding: 10px;
+    border: black solid 2px;
+    color: white;
+    background-color: #00204e;
+}
+
+
+.page-numbers.current, .page-numbers:hover{
+    background-color: white;
+    color: #00204e;
+    text-decoration: none;
+}

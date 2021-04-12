@@ -7,7 +7,7 @@
 
             <?php the_excerpt() ?>
 
-            <a href="<?php the_permalink(); ?>" class="btn btn-success">Read More </a>
+            <a href="<?php the_permalink(); ?>" class="btn btn-dark">Read More </a>
         </div>
     </div>
 
@@ -21,6 +21,12 @@
     </div>
 <?php endif; ?>
 
+<div class="row justify-content-center">
+    <div class="col-4">
 <?php echo paginate_links() ?>
+    </div>
+    </div>
+
+</div>
 
 

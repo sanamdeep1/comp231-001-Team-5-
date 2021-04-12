@@ -65,7 +65,7 @@ function article_post_type(){
             'item_published' => 'Article Published'
         ),
         'public' => true,
-        'exclude_from_search' => false,
+        'exclude_from_search' => true,
         'publicly_queryable' => true,
         'hierarchical' => true,
         'menu_icon' => 'dashicons-media-spreadsheet',
@@ -90,15 +90,15 @@ function article_taxonomy(){
         'hierarchical' => false,
         'query_var' => true,
         'show_ui' => true,
-        'rewrite'     => array( 'slug' => 'article-tags' )
+        'rewrite'     => array( 'slug' => 'articletags' )
     );
 
-    register_taxonomy('article-tags', array('article'), $args);
+    register_taxonomy('articletags', array('article'), $args);
 }
 add_action('init', 'article_taxonomy');
 
 
-
+/*Custom Search for Artiles only (Title and Tag only)*/
 function article_archive_search($template){
     global $wp_query;
     $post_type = get_query_var('post_type');

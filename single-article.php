@@ -3,11 +3,11 @@
     <h1><?php the_title(); ?> </h1>
 
     <p>Tags: 
-        <?php $articleTerms = wp_get_post_terms($post->ID, 'article-tags');
+        <?php $articleTerms = wp_get_post_terms($post->ID, 'articletags');
                 if ($articleTerms) {
                         $tagsArray = array();
                         foreach ($articleTerms as $articleTerm) {
-                                $tagsArray[] = '<span><i class="fas fa-tag"></i><a class="' .$articleTerm->slug .'" href="' .get_term_link( $articleTerm->slug, 'article-tags') .'" target="_blank">' .$articleTerm->name .'</a></span>';
+                                $tagsArray[] = '<span><i class="fas fa-tag"></i><a class="' .$articleTerm->slug .'" href="' .get_term_link( $articleTerm->slug, 'articletags') .'">' .$articleTerm->name .'</a></span>';
                         }
                         echo join( '&nbsp;&nbsp;&nbsp;&nbsp;', $tagsArray );
                 };
