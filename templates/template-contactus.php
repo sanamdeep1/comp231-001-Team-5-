@@ -14,7 +14,7 @@ Template Name: Contact Us
         </div>
 
         <div class="col-6">
-            <?php get_template_part('includes/section', 'content'); ?>
+            <?php get_template_part('includes/section', 'ContactUsForm'); ?>
         </div>
     </div>
 

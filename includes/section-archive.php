@@ -12,6 +12,13 @@
     </div>
 
     <?php endwhile; ?>
+    <?php else: ?>
+        <p>No Search Results</p>
+        <div class="row">
+            <div class="col-6">
+            <?php get_search_form(); ?>
+    </div>
+    </div>
 <?php endif; ?>
 
 <?php echo paginate_links() ?>
