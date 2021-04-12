@@ -23,6 +23,9 @@ $query = new WP_Query($args);
         $thumbnailID = get_post_thumbnail_id();
         $imageURL = wp_get_attachment_image_src($thumbnailID, 'full');
         $altText = get_post_meta($thumbnailID, '_wp_attachment_alt', true);
+
+        $fname = get_the_author_meta('first_name');
+        $lname = get_the_author_meta('last_name');
     ?>
 
 
@@ -36,6 +39,7 @@ $query = new WP_Query($args);
             <div class="container bg-dark">
               <div class="carousel-caption text-left">
                 <h1><?php the_title(); ?></h1>
+                <p>Posted by: <?php echo $fname?> <?php echo $lname ?></p>
                 <p class="d-flex d-sm-block"><?php the_excerpt(); ?>
                     <a class="btn btn-primary" href="<?php the_permalink();?>">Continue Reading</a>
                 </p>

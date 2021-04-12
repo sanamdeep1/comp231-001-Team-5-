@@ -1,7 +1,7 @@
 <div class="card text-center my-4">
     <a href="./article">
         <div class="card-body">
-            <h4 class="card-title">Articles</h5>
+            <h4 class="card-title">Articles</h4>
             <p class="card-text">Search, browse and read journal articles in our archives.</p>
         </div>
     </a>
