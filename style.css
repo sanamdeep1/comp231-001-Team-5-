@@ -1,0 +1,149 @@
+/*
+Theme Name: GSP-Theme
+Author: Parth Patel
+Description: Theme used for GSP website
+Version:1.0
+
+*/
+ 
+body {
+    background: #c4c4c4;
+    margin: 0;
+    padding: 0;
+}
+
+#mainBody{
+    margin: 0 auto;
+    height: auto;
+    padding: 20px 30px;
+    background-color: rgb(218, 218, 218);
+    overflow: hidden;
+}
+
+#title-card{
+    background-color: #00204e;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px;
+}
+
+.gsp-logo{
+    justify-self: start;
+}
+
+
+.gsp-byline{
+    display:inline-block;
+    font-size: large;
+    color: #ffffff;
+
+}
+
+#formContainer{
+    display: inline;
+    margin-right: 10px;
+}
+
+
+
+.customNav{
+    margin: 0 0;
+    background-color: #00204e ;
+    text-align: center;
+    padding: 10px;
+    border-top: solid white 1px;
+    border-bottom: solid white 1px;
+}
+
+.menu-mainmenu-container > #headerMenu > .menu-item{
+    display: inline-block;
+    position: relative;
+}
+
+.menu-item a{
+    display: block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: white;
+    border: solid grey 2px;
+}
+
+.menu-item a:hover{
+    background-color: rgb(69, 80, 180);
+    color: lightgray;
+}
+
+.current_page_item > a{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.menu-mainmenu-container > #headerMenu > .menu-item .sub-menu{
+    position: absolute;
+    display: none;
+}
+
+.menu-mainmenu-container > #headerMenu > .menu-item:hover .sub-menu{
+    display: block;
+    padding: 0;
+}
+
+.sub-menu .menu-item{
+    list-style-type: none;
+    width: 200%;
+    background-color: #00204e;
+}
+
+.sub-menu .menu-item a{
+    margin: 0;
+}
+
+
+.gsp-footer{
+    text-align: center;
+    border-top: #ffffff 1px solid;
+    background-color: #00204e;
+    color: white;
+    margin: 0px;   
+    padding: 10px; 
+}
+
+.gsp-footer > *{
+    margin: 0px;
+}
+
+#carouselContainer{ 
+    margin: 0 auto;
+}
+
+a.carousel-item-title{
+    color: white;
+    text-decoration: none;
+}
+
+.carousel-caption{
+    bottom: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#pages-cards a{
+    text-decoration: none;
+    color: white;
+}
+
+#pages-cards .card{
+    padding: 20px 0px;
+    background-color: #00204e;
+    color: white;
+}
+.card-text{
+    font-size: larger;
+}
+
+#pages-cards .card:hover .card-title{
+    font-size: xx-large;
+}
