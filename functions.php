@@ -52,13 +52,24 @@ function article_post_type(){
     $args = array(
         'labels' => array(
             'name' => 'Articles',
-            'singular_name' => 'Article'
+            'singular_name' => 'Article',
+            'menu_name' => 'Articles',
+            'name_admin_bar' => 'Articles',
+            'add_new' => 'Add New',
+            'add_new_item' => 'Add New Article',
+            'edit_item' => 'Edit Article',
+            'new_item' => 'New Article',
+            'view_item' => 'View Article',
+            'search_items' => 'Search Articles',
+            'item_published' => 'Article Published'
         ),
         'public' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
         'hierarchical' => true,
         'menu_icon' => 'dashicons-media-spreadsheet',
         'has_archive' => true,
-        'supports' => array('title', 'custom-fields')
+        'supports' => array('title', 'editor', 'excerpt','custom-fields')
     );
     register_post_type('article', $args);
 }
@@ -72,13 +83,13 @@ function article_taxonomy(){
     $args = array(
         'labels' => array(
                 'name' => ' Tags',
-                'singular_name' => 'E-Journal'
+                'singular_name' => 'Tag'
         ),
         'public' => true,
         'hierarchical' => false,
     );
 
-    register_taxonomy('E-Journal', array('article'), $args);
+    register_taxonomy('Tags', array('article'), $args);
 }
 add_action('init', 'article_taxonomy');
 
