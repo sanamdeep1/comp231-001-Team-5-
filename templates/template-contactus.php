@@ -8,15 +8,10 @@ Template Name: Contact Us
 
     <h1><?php the_title(); ?> </h1>
 
-    <div class="row">
-        <div class="col-6">
-            This is where the contact us form would go.
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <?php the_content() ?>
         </div>
-
-        <div class="col-6">
-            <?php get_template_part('includes/section', 'ContactUsForm'); ?>
-        </div>
-    </div>
 
 
 <?php get_footer(); ?>
