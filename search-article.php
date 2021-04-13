@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <h1>Articles</h1>
+
 <div class="row mb-1">
     <div class="col-8">
         <?php get_template_part('includes/section', 'ArticleSearchForm'); ?>
@@ -10,7 +11,7 @@
 
 <?php if(have_posts()) : while(have_posts()) : the_post() ?>
 
-<?php get_template_part('includes/section','ArticleArchives' ); ?>
+    <?php get_template_part('includes/section','ArticleArchives' ); ?>
 
 <?php endwhile; else :?> 
 

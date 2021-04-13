@@ -4,11 +4,17 @@
 
 <p>
         <span class="article_authors"><?php echo get_post_meta($postID, 'authors', true); ?> : </span>
+
         <a href="<?php the_field('pdf_file'); ?>"><span class="article_title"><?php echo the_title(); ?>. </span></a>
+
         <span class="article_publiation"> In: <?php echo get_post_meta($postID, 'publication', true); ?>, </span>
+
         <span class="article_volumeNum"><?php echo get_post_meta($postID, 'volume_number', true); ?></span>
+
         <span class="article_issue"> (<?php echo get_post_meta($postID, 'issue_number', true); ?>). </span>
+
         Type: <span class="badge badge-info">E-Journal</span>
+        
         Tags: 
         <?php $articleTerms = wp_get_post_terms($post->ID, 'articletags');
                 if ($articleTerms) {
